@@ -89,28 +89,35 @@ $ mv geerlingguy.nginx/ nginx
 - To configure the apache role, go to the `defaults/main.yml` directory and add the ip-addresses of the webservers for the load_balancer configuration. Secondly, go into the `templates/vhost.conf.j2` directory and add the loadbalancer configuration within the virtualhost tag. 
 
 *defaults/main.yml*
+
 ![5](https://user-images.githubusercontent.com/47898882/130089646-d1218ad9-eaa0-47aa-bf9b-2a5e0fe2331f.JPG)
 
 *templates/vhost.conf.j2*
+
 ![6](https://user-images.githubusercontent.com/47898882/130090545-cfc8ca2e-7289-44bd-9fed-8c0a6230441a.JPG)
 
 - To configure the nginx role, go to the `defaults/main.yml` directory and add the ip-addresses of the webservers for the load_balancer configuration. Set the webservers hostnames within the tasks/main.yml directory. Lastly, add the loadbalancer configuration within the `templates/nginx.conf.j2`
 
 *defaults/main.yml*
+
 ![8](https://user-images.githubusercontent.com/47898882/130092099-eb8cb24b-4101-4d81-a24f-a8bbfebc91cb.JPG)
 
 *tasks/main.yml*
+
 ![9](https://user-images.githubusercontent.com/47898882/130092111-61bcb5b5-1a2e-40b1-8e79-d427443875b8.JPG)
 
 *templates/nginx.conf.j2*
+
 ![7](https://user-images.githubusercontent.com/47898882/130092718-0e8e4dbd-95a9-4353-a785-e528416243ae.JPG)
 
 - To practicalize the dynamic assignment concept, we have to add environmental variables to our roles. To perform this task, go the the default/main.yml file of the apache and nginx roles, create a variable, and set the variables to false. In this case we are telling both roles, to set these variables to false by default, then we can decide to set it to true in the env-vars folder based on the environment(dev, uat, staging, prod) we are running the tasks on. This explains why this method is nown as dynamic assignments
 
 *defaults/main.yml*
+
 ![10](https://user-images.githubusercontent.com/47898882/130093789-6b29d0d3-5331-4633-a11f-cb4ab64b62e8.JPG)
 
 *defaults/main.yml*
+
 ![11](https://user-images.githubusercontent.com/47898882/130093803-25f5485e-f09a-43fe-b733-cb2dd103c4d6.JPG)
 
 - Create a new file within the static-assignments folder and add the loadbalancer.yml file. From the playbook you can see that it'll run the particular role that has both `enable_lb` & `load_balancer_is_required` set to true.
