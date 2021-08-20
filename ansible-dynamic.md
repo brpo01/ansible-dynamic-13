@@ -7,7 +7,7 @@ In Static assignments, all statements are pre-processed at the time playbooks ar
 # INTRODUCING DYNAMIC ASSIGNMENT INTO OUR STRUCTURE
 - In the previous [project](https://github.com/brpo01/ansible-static-12/blob/master/ansible-static-12.md) GitHub repository start a new branch and call it dynamic-assignments.
 
-- Create a new folder known as dynamic-assignments, this folder will store the playboo that'll dynamically include the environmental variables in our set of tasks. Within that folder, create a file and call it env-vars.yml
+- Create a new folder known as dynamic-assignments, this folder will store the playbook that'll dynamically include the environmental variables in our set of tasks. Within that folder, create a file and call it env-vars.yml
 
 ```
 $ sudo mkdir dynamic-assignments
@@ -110,7 +110,7 @@ $ mv geerlingguy.nginx/ nginx
 
 ![7](https://user-images.githubusercontent.com/47898882/130092718-0e8e4dbd-95a9-4353-a785-e528416243ae.JPG)
 
-- To practicalize the dynamic assignment concept, we have to add environmental variables to our roles. To perform this task, go the the default/main.yml file of the apache and nginx roles, create a variable, and set the variables to false. In this case we are telling both roles, to set these variables to false by default, then we can decide to set it to true in the env-vars folder based on the environment(dev, uat, staging, prod) we are running the tasks on. This explains why this method is nown as dynamic assignments
+- To practicalize the dynamic assignment concept, we have to add environmental variables to our roles. To perform this task, go the the default/main.yml file of the apache and nginx roles, create a variable, and set the variables to false. In this case we are telling both roles, to set these variables to false by default, then we can decide to set it to true in the env-vars folder based on the environment(dev, uat, staging, prod) we are running the tasks on. This explains why this method is known as dynamic assignments
 
 *defaults/main.yml*
 
@@ -120,7 +120,7 @@ $ mv geerlingguy.nginx/ nginx
 
 ![11](https://user-images.githubusercontent.com/47898882/130093803-25f5485e-f09a-43fe-b733-cb2dd103c4d6.JPG)
 
-- Create a new file within the static-assignments folder and add the loadbalancer.yml file. From the playbook you can see that it'll run the particular role that has both `enable_lb` & `load_balancer_is_required` set to true.
+- Create a new file within the static-assignments folder and add the loadbalancer.yml file. From the playbook you can see that it'll run the particular role that has both `enable_apache_lb` or `enable_nginx_lb` & `load_balancer_is_required` set to true.
 
 ![12](https://user-images.githubusercontent.com/47898882/130094865-33825ea9-ad09-42d9-9035-e49c1b7635fd.JPG)
 
