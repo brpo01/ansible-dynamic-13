@@ -5,7 +5,7 @@ This project shows an implementation of dynamic assignments using the `include` 
 In Static assignments, all statements are pre-processed at the time playbooks are parsed. Ansible will process all the playbooks referenced during the time it is parsing the statements. This also means that, during actual execution, if any statement changes, such statements will not be considered. Hence, it is static. On the oher hand Dynamic assignments processes all statements only during execution of the playbook, which means that after the statements are parsed, any changes to the statements encountered during execution will be used. This is what makes it dynamic.
 
 # INTRODUCING DYNAMIC ASSIGNMENT INTO OUR STRUCTURE
-- In the previous [project]((https://github.com/brpo01/ansible-static-12/blob/master/ansible-static-12.md) GitHub repository start a new branch and call it dynamic-assignments.
+- In the previous [project](https://github.com/brpo01/ansible-static-12/blob/master/ansible-static-12.md) GitHub repository start a new branch and call it dynamic-assignments.
 
 - Create a new folder known as dynamic-assignments, this folder will store the playboo that'll dynamically include the environmental variables in our set of tasks. Within that folder, create a file and call it env-vars.yml
 
